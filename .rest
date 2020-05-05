@@ -1,0 +1,68 @@
+GET http://localhost:3007/ HTTP/1.1
+
+###
+
+GET http://localhost:3007/api/bloglist/ HTTP/1.1
+###
+GET http://localhost:3007/api/users HTTP/1.1
+###
+GET http://localhost:3007/api/users/5eb192c632c2d827e4c3be30 HTTP/1.1
+###
+GET http://localhost:3007/api/bloglist/5ea08ad6f956c208386187c4 HTTP/1.1
+
+###
+
+DELETE http://localhost:3007/api/bloglist/5eb1a93b3f12a13e10f126b1 HTTP/1.1
+
+###
+
+POST http://localhost:3007/api/bloglist HTTP/1.1
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdyb290IiwiaWQiOiI1ZWIxYzVhNzUyYWU4MDM1Y2MyODc2NGMiLCJpYXQiOjE1ODg3MDg4MzR9.M5nOngPrky0-fo6Yk5UISPTaLwKpoVzMq5aSerMaOC8
+
+{
+    "title": "I am groot",
+    "author": "groot",
+    "url": "google.com",
+    "likes": 0,
+    "userId": "5eb1c5a752ae8035cc28764c"
+}
+
+###
+
+//Create user
+POST http://localhost:3007/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "groot",
+    "name": "groot",
+    "password": "iamgroot"
+}
+
+###
+
+//Login user
+POST http://localhost:3007/api/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "JoanJett123",
+    "password": "tommy"
+}
+
+###
+
+//Delete user ???
+DELETE http://localhost:3007/api/users/5eb1a8983f12a13e10f126b0 HTTP/1.1
+
+###
+PUT http://localhost:3007/api/bloglist/5eaae6629382c13230e98701 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "another important blog post",
+    "author": "Jessie",
+    "url": "google.com",
+    "likes": 1,
+}
